@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 namespace Super_Market_web
+=======
+namespace SuperMarketWEB
+>>>>>>> d0a7c64 (Se ajusta el NuGet)
 {
     public class Program
     {

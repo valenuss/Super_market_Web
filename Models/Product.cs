@@ -4,7 +4,7 @@ namespace Super_Market_web.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        public int Id { get; set; } //sera la llave primaria
 
         public string Name { get; set; }
 
@@ -14,8 +14,8 @@ namespace Super_Market_web.Models
 
         public int stock { get; set; }
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } //sera la llave foranea
 
-        public Category Category { get; set; }
+        public Category Category { get; set; } //propiedad de navegacion
     }
 }
