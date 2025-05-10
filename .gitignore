@@ -1,0 +1,14 @@
+# Ignorar archivo de visual studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar carpetas de compilacion
+bin/
+obj/
+
+# Ignorar archivos de control de codigo fuente antiguos
+*.vssscc
+*.vspscc
