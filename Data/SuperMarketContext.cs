@@ -5,14 +5,13 @@ using SupermarketWEB.Models;
 
 namespace Super_Market_web.Data
 {
-    public class SuperMarketContext
+    public class SuperMarketContext : DbContext
     {
-        public SuperMarketContext(DbContextOptions options) : base(options)
+        public SuperMarketContext(DbContextOptions<SuperMarketContext> options) : base(options)
         {
         }
 
         public DbSet<Product> Products { get; set; }
-
-        public DbSet<Category> categories { get; set; } 
+        public DbSet<Category> Categories { get; set; }
     }
 }

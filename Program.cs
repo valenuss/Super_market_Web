@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+using Microsoft.EntityFrameworkCore;
+using Super_Market_web.Data;
+
 namespace Super_Market_web
 =======
 namespace SuperMarketWEB
@@ -13,6 +16,10 @@ namespace SuperMarketWEB
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            //Agregando el contexto SupermarketContext a la aplicación
+            builder.Services.AddDbContext<SuperMarketContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB"))
+            );
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
