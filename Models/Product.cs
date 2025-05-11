@@ -16,6 +16,5 @@ namespace Super_Market_web.Models
 
         public int CategoryId { get; set; } //sera la llave foranea
 
-        public Category Category { get; set; } //propiedad de navegacion
     }
 }
