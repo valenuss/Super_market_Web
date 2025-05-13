@@ -1,35 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApp.Data; // Cambia según tu namespace
-using WebApp.Models; // Cambia según tu namespace
+using SupermarketWEB.Data;
+using SupermarketWEB.Models;
 
-public class CreateModel : PageModel
+namespace SupermarketWEB.Pages.Categories
 {
-    private readonly AppDbContext _context;
-
-    public CreateModel(AppDbContext context)
+    public class CreateModel : PageModel
     {
-        _context = context;
-    }
+        private readonly SupermarketContext _context;
 
-    [BindProperty]
-    public Categoria Categoria { get; set; }
+        public CreateModel(SupermarketContext context)
+        {
+            _context = context;
+        }
 
-    public IActionResult OnGet()
-    {
-        return Page();
-    }
-
-    public async Task<IActionResult> OnPostAsync()
-    {
-        if (!ModelState.IsValid)
+        public IActionResult OnGet()
         {
             return Page();
         }
 
-        _context.Categorias.Add(Categoria);
-        await _context.SaveChangesAsync();
+        [BindProperty]
+        public Category Category { get; set; } = default!;
 
-        return RedirectToPage("Index");
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid || _context.Categories == null || Category == null)
+            {
+                return Page();
+            }
+
+            _context.Categories.Add(Category);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
+        }
     }
 }
