@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Index Categories";
 }
-
 <h1>Index Categories</h1>
 
 <p>
@@ -25,21 +24,21 @@
     <tbody>
         @foreach (var item in Model.Categories)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
-                <td>
-                    <span></span>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
